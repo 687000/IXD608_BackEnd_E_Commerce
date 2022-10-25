@@ -16,6 +16,7 @@
 }
 body {
 	background: var(--color-background-gradient);
+	min-height: 100vh;
 }
 @media(max-width: 810px){
 	.container{
@@ -292,10 +293,12 @@ h1 {
 	color: var(--color-theme-dark);
 	font-weight: 400;
 	letter-spacing: 0.15em;
+	border-bottom: 1px solid transparent;
 }
 .nav-stretch a{
 	line-height: 20px;
 	text-transform: uppercase;
+	border-bottom: 1px solid transparent;
 }
 
 .nav-flex .active a,.nav-flex a:hover,.nav-stretch .active a ,.nav-stretch a:hover{
@@ -353,5 +356,16 @@ h1 {
 	text-align: center;
 }
 /* course module 05 */
+
+/* php version */
+.navbar {
+	background-color: transparent;
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+.nav-stretch .to_vertical_menu:hover{
+	border-bottom: 1px solid transparent;
+}
+/* php version */
 
 

@@ -1,18 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Store Home Page</title>
-	<link rel="stylesheet" href="lib/css/gridsystem.css">
-	<link rel="stylesheet" href="lib/css/styleguide.css">
-	<link rel="stylesheet" href="css/storetheme.css">
+	<? include "parts/meta.php"?>
 </head>
 <body>
 	<header>
 		<div class="container display-flex">
 			<div class="flex-none">
-				<h1>Cool Website</h1>
+				<h1>Index Page</h1>
 			</div>
 			<div class="flex-stretch"></div>
 			<div class="flex-none nav">
