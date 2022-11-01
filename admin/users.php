@@ -1,6 +1,26 @@
 <? 
 	include "../lib/php/functions.php";
 	$users=file_get_json("../data/users.json");
+//_POST make sure to handle the post action
+//submit-btn monitor the submission(submit button is clicked)
+//get input value
+//assign the value and encode to the json file
+//P: unable to access the @users. Have to get json again
+//S: previously the function is placed inside showUserPage, which has no access to @users;
+//P: need to refresh the page to get the update value. Otherwise it will stay the same.
+//S: php loads form tob. previous sequece: render form, submit, render form, update data, force refresh, get correct result. After move the handler to top, render form, submit, update data, render form
+//when store the classess, need to reverse the implode: implode make the array to string. use expload to make the string to array
+    if(isset($_POST['submit-btn'])){
+    	$user_type = $_POST['user-type'];
+    	$user_email = $_POST['user-email'];
+    	$user_classes = $_POST['user-classes'];
+    	$user=$users[$_GET['id']];
+    	$user->type=$user_type;
+    	$user->email=$user_email;
+    	$user->classes=explode(",",$user_classes);
+    	$new_users = json_encode($users);
+    	file_put_contents('../data/users.json', $new_users);
+    }  
 	function showUserPage($user){
 		$classes=implode(",",$user->classes);
 echo <<<HTML
