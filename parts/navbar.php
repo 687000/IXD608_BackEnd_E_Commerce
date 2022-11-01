@@ -8,8 +8,9 @@
 			<div class="flex-none nav nav-stretch">
 				<ul>
 					<li><a href="index.php">Home</a></li>
-					<li><a href="product_list.php">Product List</a></li>
+					<li><a href="product_list.php">Store</a></li>
 					<li><a href="about.php">About US</a></li>
+					<li><a href="product_cart.php">Cart</a></li>
 				</ul>
 			</div>
 		</div>
