@@ -21,6 +21,16 @@
     	$new_users = json_encode($users);
     	file_put_contents('../data/users.json', $new_users);
     }  
+    //need to rebase the array after deleting the element
+    else if(isset($_POST['delete-btn'])){
+    	unset($users[$_GET['id']]);
+    	$rebased_users = array_values($users);
+    	$new_users = json_encode($rebased_users);
+    	file_put_contents('../data/users.json', $new_users);
+    	//redirect to the list
+    	header("Location: users.php");
+    	exit();
+    }
 	function showUserPage($user){
 		$classes=implode(",",$user->classes);
 echo <<<HTML
@@ -45,6 +55,8 @@ echo <<<HTML
 	</div>
 	<div class="form-control">
 		<input class="form-button" name="submit-btn" type="submit" value="Submit"></input>
+		<br><br>
+		<input class="form-button dark" name="delete-btn" type="submit" value="Delete"></input>
 	</div>
 </form>
 HTML;
@@ -85,11 +97,12 @@ HTML;
 					  for($i=0;$i<count($users);$i++){
 					  	echo "<li>
 					  	<a href='admin/users.php?id=$i'>{$users[$i]->name}</a>
-					  	</li>";
+					  	</li><br>";
 					  }
 					?>		
 				</ul>
 			</nav>
+			<a href="admin/new_user.php" class="form-button" name="add-btn">Add</a>
 		<? } ?>
 
 		</div>
