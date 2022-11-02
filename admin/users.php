@@ -1,111 +1,162 @@
 <? 
 	include "../lib/php/functions.php";
+	$filename="../data/users.json";
 	$users=file_get_json("../data/users.json");
-//_POST make sure to handle the post action
-//submit-btn monitor the submission(submit button is clicked)
-//get input value
-//assign the value and encode to the json file
-//P: unable to access the @users. Have to get json again
-//S: previously the function is placed inside showUserPage, which has no access to @users;
-//P: need to refresh the page to get the update value. Otherwise it will stay the same.
-//S: php loads form tob. previous sequece: render form, submit, render form, update data, force refresh, get correct result. After move the handler to top, render form, submit, update data, render form
-//when store the classess, need to reverse the implode: implode make the array to string. use expload to make the string to array
-    if(isset($_POST['submit-btn'])){
-    	$user_type = $_POST['user-type'];
-    	$user_email = $_POST['user-email'];
-    	$user_classes = $_POST['user-classes'];
-    	$user=$users[$_GET['id']];
-    	$user->type=$user_type;
-    	$user->email=$user_email;
-    	$user->classes=explode(",",$user_classes);
-    	$new_users = json_encode($users);
-    	file_put_contents('../data/users.json', $new_users);
-    }  
-    //need to rebase the array after deleting the element
-    else if(isset($_POST['delete-btn'])){
-    	unset($users[$_GET['id']]);
-    	$rebased_users = array_values($users);
-    	$new_users = json_encode($rebased_users);
-    	file_put_contents('../data/users.json', $new_users);
-    	//redirect to the list
-    	header("Location: users.php");
-    	exit();
-    }
-	function showUserPage($user){
-		$classes=implode(",",$user->classes);
-echo <<<HTML
-<nav class="nav nav-crumbs">
-	<ul>
-		<li><a href="admin/users.php">Back</a></li>
-	</ul>
-</nav>
-<form method="post" action="">
-	<h2>$user->name</h2>
-	<div class="form-control">
-		<label class="form-label">Type</label>
-		<input class="form-input" name="user-type" id="user-type" type="text" placeholder="Enter User Type" value="$user->type"></input>
-	</div>
-	<div class="form-control">
-		<label class="form-label">Email</label>
-		<input class="form-input" name="user-email" id="user-email" type="email" placeholder="Enter User Email" value="$user->email"></input>
-	</div>
-	<div class="form-control">
-		<label class="form-label">Classes</label>
-		<input class="form-input" name="user-classes" id="user-classes" type="text" placeholder="Enter User Classes" value="$classes"></input>
-	</div>
-	<div class="form-control">
-		<input class="form-button" name="submit-btn" type="submit" value="Submit"></input>
-		<br><br>
-		<input class="form-button dark" name="delete-btn" type="submit" value="Delete"></input>
-	</div>
-</form>
-HTML;
+	$empty_user=(object)[
+		"name"=>"",
+		"type"=>"",
+		"email"=>"",
+		"classes"=>[]
+	];
+if(isset($_GET['action'])){
+	switch ($_GET['action']) {
+		case 'update':
+			$users[$_GET['id']]->name=$_POST['user-name'];
+			$users[$_GET['id']]->type=$_POST['user-type'];
+			$users[$_GET['id']]->email=$_POST['user-email'];
+			$users[$_GET['id']]->classes=explode(",",$_POST['user-classes']);				
+			file_put_contents($filename,json_encode($users));
+    		header("Location: {$_SERVER['PHP_SELF']}?id={$_GET['id']}");
+    		exit();
+			break;
+		case 'create':	
+			$empty_user->name=$_POST['user-name'];
+			$empty_user->type=$_POST['user-type'];
+			$empty_user->email=$_POST['user-email'];
+			$empty_user->classes=explode(",",$_POST['user-classes']);
+			$id=count($users);
+			$users[]=$empty_user;
+			file_put_contents($filename,json_encode($users));
+    		header("Location: {$_SERVER['PHP_SELF']}?id=$id");
+    		exit();			
+			break;	
+		case 'delete':	
+			array_splice($users,$_GET['id'],1);
+			file_put_contents($filename,json_encode($users));
+    		header("Location: {$_SERVER['PHP_SELF']}");
+    		exit();				
+			break;
+		default:
+			// code...
+			break;
+	};
 }
 
+function showUsePage($user){
+		
+$id=$_GET['id'];
+$addoredit=$id == "new"?"add":"Edit";
+$createorupdate=$id == "new"?"create":"update";
+$classes=implode(",",$user->classes);
+$display= <<<HTML
+<div>
+	<h2>$user->name</h2>
+	<div>
+		<strong>Type</strong>
+		<span>$user->type</span>
+	</div>
+	<div>
+		<strong>Email</strong>
+		<span>$user->email</span>
+	</div>
+	<div>
+		<strong>Classes</strong>
+		<span>$classes</span>
+	</div>
+</div>
+HTML;
+$form= <<<HTML
+<form method="post" action="{$_SERVER['PHP_SELF']}?id=$id&action=$createorupdate">
+<h2>$addoredit User</h2>
+
+<div class="form-control">
+	<label class="form-label" for="user-name">Name</lable>
+	<input class="form-input" name="user-name" id="user-name" type="text" placeholder="Enter User Name"value="$user->name">
+	</input>
+<div>
+<div class="form-control">
+	<label class="form-label" for="user-type">Type</lable>
+	<input class="form-input" name="user-type" id="user-type" type="text" placeholder="Enter User Type"value="$user->type">
+	</input>
+<div>
+<div class="form-control">
+	<label class="form-label" for="user-email">Email</lable>
+	<input class="form-input" name="user-email" id="user-email" type="email" placeholder="Enter User Email"value="$user->email">
+	</input>
+<div>
+<div class="form-control">
+	<label class="form-label" for="user-classes">Classes</lable>
+	<input class="form-input" name="user-classes" id="user-classes" type="text" placeholder="Enter User Classes (comma separated)" value="$classes">
+	</input>
+<div>
+<div class="form-control">
+	<input class="form-button" type="submit" value="Save Changes">
+	</input>
+<div>
+</form>
+HTML;
+$output=$id=="new" ? $form :
+	"<div class='grid gap'>
+		<div class='col-xs-12 col-md-5'>$display</div>
+		<div class='col-xs-12 col-md-7'>$form</div>		
+	</div>
+	";
+$delete=$id=="new" ? "": "<a href='{$_SERVER['PHP_SELF']}?id=$id&action=delete'>DELETE</a>";
+echo <<<HTML
+<nav class="display-flex">
+	<div class="flex-stretch"><a href="{$_SERVER['PHP_SELF']}">Back</a></div>
+	<div class="flex-none">$delete</div>
+</nav>
+$output
+HTML;
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>User Data</title>
-	<? include "../parts/meta.php";?>
+	<meta charset="UTF-8">
+	<title>Reading Data with JSON</title>
+	<? include "../parts/meta.php"; ?>
 </head>
 <body>
-	<header>
+	<header class="navbar">
 		<div class="container display-flex">
-			<div class="flex-none">
-				<h1>User Admin</h1>
-			</div>
+			<div class="flex-none"><h1>User Admin</h1></div>
 			<div class="flex-stretch"></div>
 			<nav class="nav nav-flex flex-none">
-				<ul>
-					<li><a href="admin/users.php">User List</a></li>
-				</ul>
-			</nav>
+			<ul>
+				<? echo $_SERVER['PHP_SELF'];?>
+				<li><a href="<?= $_SERVER['PHP_SELF']?>">User List</a></li>
+				<li><a href="<?= $_SERVER['PHP_SELF'];?>?id=new">Add New User</a></li>
+			</ul></nav>
 		</div>
 	</header>
 	<div class="container">
 		<div class="card soft">
-			<?
-			if(isset($_GET['id'])){
-				showUserPage($users[$_GET['id']]);
-			}else{
+			<? 
+				if(isset($_GET['id'])){
+					showUsePage($_GET['id']=="new" ? $empty_user: $users[$_GET['id']]);
+				}else {
 			?>
-			<h2>User List</h2>
-			<nav class="nav">
-				<ul>
-					<?
-					  for($i=0;$i<count($users);$i++){
-					  	echo "<li>
-					  	<a href='admin/users.php?id=$i'>{$users[$i]->name}</a>
-					  	</li><br>";
-					  }
-					?>		
-				</ul>
-			</nav>
-			<a href="admin/new_user.php" class="form-button" name="add-btn">Add</a>
-		<? } ?>
+					<h2>User List</h2>
+					<nav class="nav">
+						<ul>
+							<?
+							for($i=0;$i<count($users);$i++){
+								echo "
+								<li>
+								<a href='{$_SERVER['PHP_SELF']}?id=$i'>{$users[$i]->name}</a>
+								</li>
+								";
+							}
+							?>
+						</ul>
+					</nav>
+			<?}
+			?>
 
 		</div>
 	</div>
+	
 </body>
 </html>
