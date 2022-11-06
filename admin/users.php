@@ -70,22 +70,20 @@ $form= <<<HTML
 <h2>$addoredit User</h2>
 
 <div class="form-control">
-	<label class="form-label" for="user-name">Name</lable>
-	<input class="form-input" name="user-name" id="user-name" type="text" placeholder="Enter User Name"value="$user->name">
-	</input>
+	<label class="form-label" for="user-name">Name</label>
+	<input class="form-input" name="user-name" id="user-name" type="text" placeholder="Enter User Name"value="$user->name"></input>
 <div>
 <div class="form-control">
-	<label class="form-label" for="user-type">Type</lable>
-	<input class="form-input" name="user-type" id="user-type" type="text" placeholder="Enter User Type"value="$user->type">
-	</input>
+	<label class="form-label" for="user-type">Type</label>
+	<input class="form-input" name="user-type" id="user-type" type="text" placeholder="Enter User Type"value="$user->type"></input>
 <div>
 <div class="form-control">
-	<label class="form-label" for="user-email">Email</lable>
+	<label class="form-label" for="user-email">Email</label>
 	<input class="form-input" name="user-email" id="user-email" type="email" placeholder="Enter User Email"value="$user->email">
 	</input>
 <div>
 <div class="form-control">
-	<label class="form-label" for="user-classes">Classes</lable>
+	<label class="form-label" for="user-classes">Classes</label>
 	<input class="form-input" name="user-classes" id="user-classes" type="text" placeholder="Enter User Classes (comma separated)" value="$classes">
 	</input>
 <div>
