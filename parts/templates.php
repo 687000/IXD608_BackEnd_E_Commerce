@@ -25,7 +25,7 @@ return $r.<<<HTML
 		<div>Delete</div>
 	</div>
 	<div class="flex-none">
-		$dollar;$o->price
+		&dollar;$o->price
 	</div>	
 </div>
 HTML;

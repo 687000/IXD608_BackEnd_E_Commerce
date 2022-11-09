@@ -16,7 +16,13 @@
 <body>
 	<? include "parts/navbar.php";?>
 	<div class="container">
-		<div class="col-mx-12 col-md-7">
+		<div class="grid gap">
+		<div class="col-xs-12 col-md-6">
+			<div class="card soft">
+				<?= array_reduce($cart, 'cartListTemplate')?>
+			</div>
+		</div>
+		<div class="col-xs-12 col-md-6">
 			<div class="cord soft flat">
 				<div class="card-section display-flex">
 					<div class="flex-stretch"><strong>Sub Total</strong></div>
@@ -36,6 +42,7 @@
 			</div>
 		</div>
 	</div>
+</div>
 	
 </body>
 </html>
