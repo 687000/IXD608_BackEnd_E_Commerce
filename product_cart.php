@@ -1,0 +1,41 @@
+<? 
+	include_once "lib/php/functions.php";
+	include_once "parts/templates.php";
+	$cart=makeQuery(
+					makeConn(),
+					"SELECT *
+					FROM `products`
+					WHERE `id` IN (3,5,7)");
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Cart Page</title>
+	<? include "parts/meta.php";?>
+</head>
+<body>
+	<? include "parts/navbar.php";?>
+	<div class="container">
+		<div class="col-mx-12 col-md-7">
+			<div class="cord soft flat">
+				<div class="card-section display-flex">
+					<div class="flex-stretch"><strong>Sub Total</strong></div>
+					<div class="flex-none">&dollar;3.50</div>
+				</div>
+				<div class="card-section display-flex">
+					<div class="flex-stretch"><strong>Taxes</strong></div>
+					<div class="flex-none">&dollar;3.50</div>
+				</div>
+				<div class="card-section display-flex">
+					<div class="flex-stretch"><strong>Total</strong></div>
+					<div class="flex-none">&dollar;7.00</div>
+				</div>
+				<div class="card-section">
+					<a href="product_checkout.php" class="form-button">Checkout</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</body>
+</html>

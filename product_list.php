@@ -2,19 +2,25 @@
 <html lang="en">
 <head>
 	<title>Product List</title>
-	<? include "parts/meta.php"?>
+	<? include "parts/meta.php";?>
 </head>
 <body>
-	<? include "parts/navbar.php"?>
+	<? include "parts/navbar.php";?>
 	<div class="container">
 		<div class="card soft">
 			<h2>Product List</h2>
-			<ul>
-				<a href="product_item.php?id=1"><li class="card soft">Product 1</li></a>
-				<a href="product_item.php?id=2"><li class="card soft">Product 2</li></a>
-				<a href="product_item.php?id=3"><li class="card soft">Product 3</li></a>
-				<a href="product_item.php?id=4"><li class="card soft">Product 4</li></a>
-			</ul> 
+			<? 
+				include_once "lib/php/functions.php";
+			    include_once "parts/templates.php";
+				$result =makeQuery(
+					//connection to database
+					makeConn(),
+					"SELECT *
+					FROM `products`
+					ORDER BY `date_create`
+					LIMIT 12");
+				echo "<div class='productlist grid gap'>",array_reduce($result,'productListTemplate'),"</div>";
+			?>
 		</div>
 	</div>
 </body>

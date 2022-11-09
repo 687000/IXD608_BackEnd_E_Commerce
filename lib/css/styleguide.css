@@ -68,6 +68,13 @@ a:hover {
 	justify-content: center;
 }
 
+/* module 09 */
+.flex-column {
+	flex-direction: column;
+}
+
+/* module 09 */
+
 /* small component */
 
 .media-image {
@@ -183,7 +190,12 @@ a:hover {
 .card.flat {
 	padding: 0;
 }
-
+.card-selection~.card-selection{
+	border-top:  1px solid var(--color-neutral-light);
+}
+.card-selection{
+	padding:  1em;
+}
 /* well */
 .well {
 	background-color: var(--color-neutral-light);
@@ -251,7 +263,9 @@ hr {
 	width: 100%;
 	vertical-align: text-bottom;
 }
-
+figcaption div {
+	margin:  1em 0;
+}
 /* forms */.form-control {
 	margin: 1em 0;
 

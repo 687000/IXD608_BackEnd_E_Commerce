@@ -40,6 +40,19 @@ body {
 	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 	overflow: hidden;
 }
+.product.figure img {
+	height: 100%;
+	object-fit: contain;
+}
+.productlist a {
+	text-decoration: none;
+	font-weight: initial;
+}
+.product.figure:hover {
+	box-shadow: 0 2px 15px rgba(0,0,0,0.2);
+}
+
+
 .figure figcaption {
   font-family: var(--font-serif);
   padding:1em;
@@ -317,6 +330,15 @@ h1 {
 .card.soft{
 	border-radius: 0.5em;
 }
+.card.hard{
+	border-color: var(--color-theme-light);
+}
+.card.dark{
+	background-color: var(--color-theme-dark);
+}
+.card.medium{
+	background-color: var(--color-theme-medium);
+}
 /* table */
 .table.striped tbody tr:nth-child(odd){
 	background-color: var(--color-theme-ex-light);
@@ -368,4 +390,12 @@ h1 {
 }
 /* php version */
 
-
+.image-main img {
+	width: 100%;
+	height: 40vh;
+	object-fit: contain;
+}
+.images-thumbs img {
+	width: 8em;
+	height: 6em;
+}
