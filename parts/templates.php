@@ -9,6 +9,10 @@ return $r.<<<HTML
 	<figcaption class="flex-none">
 		<div>&dollar;$o->price</div>
 		<div>$o->title</div>
+				<div class="form-control">
+					<button class="form-button " type="button">ADD TO CART</button>
+				</div>	
+	
 	</figcaption>
 </figure>
 </a>

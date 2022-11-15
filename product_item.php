@@ -22,7 +22,8 @@
 	<div class="container">
 		<div class="grid gap">
 			<div class="col-xs-12 col-md-7">
-				<div class="card soft">
+				<h1>Item Details</h1>
+				<div class="card transparent">
 					<div class="image-main">
 						<img src="img/store/<?= $product->thumbnail ?>" alt="<?= $product->title?>">
 					</div>
@@ -32,7 +33,7 @@
 				</div>
 			</div>
 			<div class="col-xs-12 col-md-5">
-				<div class="card soft">
+				<div class="card transparent">
 					<div class="card-selection">
 						<h2 class="product-title">
 							<?= $product->title; ?>

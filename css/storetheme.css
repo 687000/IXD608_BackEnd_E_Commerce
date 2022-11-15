@@ -398,4 +398,58 @@ h1 {
 .images-thumbs img {
 	width: 6em;
 	height: auto;
+
 }
+/* custom webpage */
+h1, h2, h3, h4, h5, h6, p {
+	color: var(--color-theme-medium);
+	font-weight: lighter;
+}
+hr {
+  border-bottom: 0.5px solid var(--color-theme-light);
+ }
+footer {
+	margin-top: 3em;
+}
+footer .grid {
+	padding: 2em;
+	margin: 0;
+	width: 100%;
+	background-color: var(--color-theme-light);
+	color: var(--color-offwhite);
+}
+footer .grid h4{
+	color: var(--color-offwhite);
+}
+footer .grid p{
+	font-weight: 100;
+	color: var(--color-offwhite);
+}
+footer .author_right {
+	padding: 1em;
+	background-color: var(--color-theme-medium);
+}
+footer .author_right p {
+	color: var(--color-offwhite);
+}
+.transparent {
+	background-color: transparent;
+}
+.text_center {
+	text-align: center;
+}
+.productlist .figure.product{
+	background-color: transparent;
+	border-radius: 0;
+	box-shadow: none;
+}
+.productlist .product.figure img {
+	height: 40vh;
+}
+.productlist figcaption {
+	margin: 0.5em;
+}
+.productlist figcaption div:nth-of-type(2){
+	height: 5vh;
+}
+

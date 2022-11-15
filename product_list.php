@@ -7,8 +7,8 @@
 <body>
 	<? include "parts/navbar.php";?>
 	<div class="container">
-		<div class="card soft">
-			<h2>Product List</h2>
+		<div class="card transparent">
+			<h1 class="text_center">Shopping</h1>
 			<? 
 				include_once "lib/php/functions.php";
 			    include_once "parts/templates.php";
@@ -23,5 +23,6 @@
 			?>
 		</div>
 	</div>
+	<? include "parts/footer.php"?>
 </body>
 </html>
