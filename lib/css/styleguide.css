@@ -181,6 +181,7 @@ a:hover {
 }
 .card.medium {
 	background-color:var(--color-neutral-medium);
+	color: var(--color-white);
 }
 .card.dark {
 	background-color:var(--color-neutral-dark);
@@ -371,7 +372,11 @@ figcaption div {
 	transform: translateX(1em);
 
 }
-
+/* module11 */
+.form-button.inline {
+	width: initial;
+}
+/* module11 */
 
 
 
