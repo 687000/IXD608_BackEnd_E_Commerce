@@ -453,3 +453,16 @@ footer .author_right p {
 	height: 5vh;
 }
 
+/* module 11*/
+
+span.badge:not(:empty)::after{
+	content: ')';
+}
+span.badge:not(:empty)::before{
+	content: '(';
+}
+footer a:hover {
+	text-decoration: none;
+}
+/* module 11*/
+

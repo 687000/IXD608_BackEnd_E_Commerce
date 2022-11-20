@@ -372,7 +372,11 @@ figcaption div {
 	transform: translateX(1em);
 
 }
-
+/* module11 */
+.form-button.inline {
+	width: initial;
+}
+/* module11 */
 
 
 

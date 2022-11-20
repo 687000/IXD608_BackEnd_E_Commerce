@@ -1,3 +1,9 @@
+<?
+include_once "lib/php/functions.php";
+include_once "lib/php/templates.php";
+#print_p($_SESSION,$_GET,$_POST);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

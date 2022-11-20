@@ -33,7 +33,8 @@
 				</div>
 			</div>
 			<div class="col-xs-12 col-md-5">
-				<div class="card transparent">
+				<form class="card transparent" method="post" action="cart_actions.php?action=add-to-cart">
+					<input type="hidden" name="product-id" value="<?= $product->id ?>">
 					<div class="card-selection">
 						<h2 class="product-title">
 							<?= $product->title; ?>
@@ -41,27 +42,29 @@
 						<div class="product-price">&dollar;<?= $product->price;?></div>
 					</div>
 					<div class="card-selection">
-						<label for="product-amount" class="form-label">Amount</label>
-						<div class="form-select" id="product-amount">
-							<select>
-								<option>1</option>
-								<option>2</option>
-								<option>3</option>
-								<option>4</option>
-								<option>5</option>
-								<option>6</option>
-								<option>7</option>
-								<option>8</option>
-							</select>
+						<div class="form-control">
+							<label for="product-amount" class="form-label">Amount</label>
+							<div class="form-select">
+								<select name="product-amount" id="product-amount">>
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+									<option>6</option>
+									<option>7</option>
+									<option>8</option>
+								</select>
+							</div>
 						</div>
 					</div>
 					<div class="card-selection">
-						<a href="product_added_to_cart.php?id=<?=$product->id;?>" class="form-button">Add to Cart</a>
+						<input type="submit" value="Add to Cart" class="form-button">
 					</div>
-				</div>
+				</form>
 			</div>
 		</div>
-		<div class="card soft dark">
+		<div class="card soft">
 			<p><?= $product->description;?></p>
 		</div>
 	</div>

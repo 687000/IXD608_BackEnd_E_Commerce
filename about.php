@@ -1,3 +1,6 @@
+<?
+	include_once "lib/php/functions.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +12,7 @@
 <body>
 	<? include "parts/navbar.php"?>
 	<div class="container">
-		<div class="card soft">
+		<div class="card transparent">
 			<h2>About Us</h2>
 			<p>This should be a page where you write about</p>
 		</div>

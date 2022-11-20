@@ -7,4 +7,6 @@
 			<li class=""><a href='about.php'>CART</a></li>
 		</ul>
 </nav>
-<script src="../js/vertical_menu.js"></script>
+<script src="js/vertical_menu.js"></script>
+
+

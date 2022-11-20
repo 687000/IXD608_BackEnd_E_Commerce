@@ -1,3 +1,8 @@
+<?
+	include_once "lib/php/functions.php";
+#	print_p($_SESSION,$_GET,$_POST); 
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

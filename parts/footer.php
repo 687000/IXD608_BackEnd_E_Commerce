@@ -1,7 +1,7 @@
 <footer>
 	<div class="grid gap text_center">
 		<div class="col-sm-12 col-md-4">
-			<h4>All For Hamsters</h4>
+			<a href="index.php"><h4>All For Hamsters</h4></a>
 		</div>	
 		<div class="col-sm-12 col-md-4">
 			<h4>Site Map</h4>
