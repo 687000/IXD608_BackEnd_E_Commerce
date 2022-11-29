@@ -13,6 +13,8 @@ function makeConn(){
 	$conn->set_charset('utf-8');
 	return $conn;
 }
+
+
 function makeQuery($conn,$qry){
 	$result=$conn->query($qry);
 	if($conn->errno) die($conn->error);
