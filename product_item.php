@@ -1,5 +1,6 @@
 <? 
 	include_once "lib/php/functions.php";
+	include_once "parts/templates.php";
 	$product =makeQuery(
 		makeConn(),
 		"SELECT *
@@ -67,6 +68,8 @@
 		<div class="card soft">
 			<p><?= $product->description;?></p>
 		</div>
+		<h2>Recommended Products</h2>
+		<? recommendedSimilar($product->category,$product->id)?>
 	</div>
 </body>
 </html>

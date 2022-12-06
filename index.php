@@ -1,6 +1,6 @@
 <?
 	include_once "lib/php/functions.php";
-#	print_p($_SESSION,$_GET,$_POST); 
+	include_once "parts/templates.php";
 ?>
 
 <!DOCTYPE html>
@@ -11,6 +11,16 @@
 </head>
 <body>
 	<? include "parts/navbar.php"?>
+	<!--For module 12-->
+	<div class="view-window" style="background-image: url(img/dwarf-hamste-background.jpg);">
+		<div class="fill-parent display-flex flex-align-center flex-justify-center">
+			<div class="card soft">
+				Products
+			</div>
+		</div>
+		
+	</div>
+	<!--For module 12-->
 	<div class="container">
 		<div class="card transparent text_center">
 			<h1>All For Hamsters</h2>
@@ -192,6 +202,12 @@
 
 		</div>
 	</div>
+	<div class="container">
+		<h2>Food of This Week </h2>
+		<? recommendedCategory('food'); ?>
+		<h2>Random browsing</h2>
+		<? recommendedSimilar('living',8) ?>
+	</div>	
 	<? include "parts/footer.php"?>
 </body>
 </html>

@@ -12,8 +12,16 @@ function makeConn(){
 	if($conn->connect_errno) die($conn->connect_error);
 	$conn->set_charset('utf-8');
 	return $conn;
-}
+}  
 
+function PDOConn(){
+	try{
+		$conn=new PDO(...PDOAuth());
+	}catch(PDOException $e){
+		die($e->getMessage());
+	}
+	return $conn;
+}
 
 function makeQuery($conn,$qry){
 	$result=$conn->query($qry);

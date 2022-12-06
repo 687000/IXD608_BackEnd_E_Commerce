@@ -84,6 +84,28 @@ return <<<HTML
 </div>
 HTML;
 }
+
+function recommendedCategory($cat,$limit=3){
+	$result =makeQuery(makeConn(),"SELECT * 
+		FROM `products` 
+		WHERE `category` ='$cat' 
+		ORDER BY `date_create` DESC LIMIT $limit");
+	recommendedProducts($result);
+}
+function recommendedProducts($a){
+	$products =array_reduce($a,'productListTemplate');
+echo <<<HTML
+<div class="productlist grid gap">$products</div>
+HTML;
+}
+// <> not equal to : in same category
+function recommendedSimilar($cat,$id=0,$limit=3){
+	$result=makeQuery(makeConn(),"SELECT * 
+		FROM `products` 
+		WHERE `id` <> '$id' AND `category`='$cat' 
+		ORDER BY rand() LIMIT $limit");
+	recommendedProducts($result);
+}
 ?>
 
 

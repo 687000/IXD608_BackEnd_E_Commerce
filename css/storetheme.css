@@ -465,4 +465,11 @@ footer a:hover {
 	text-decoration: none;
 }
 /* module 11*/
+/* module 12*/
 
+.productlist a,
+.product-list a{
+	text-decoration: none;
+	font-weight: initial;
+}
+/* module 12*/
