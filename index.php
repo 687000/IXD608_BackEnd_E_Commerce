@@ -9,14 +9,11 @@
 	<title>Store Home Page</title>
 	<? include "parts/meta.php"?>
 </head>
-<body>
+<body class="flush">
 	<? include "parts/navbar.php"?>
 	<!--For module 12-->
 	<div class="view-window" style="background-image: url(img/dwarf-hamste-background.jpg);">
 		<div class="fill-parent display-flex flex-align-center flex-justify-center">
-			<div class="card soft">
-				Products
-			</div>
 		</div>
 		
 	</div>

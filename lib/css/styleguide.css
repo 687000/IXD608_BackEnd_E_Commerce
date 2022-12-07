@@ -72,6 +72,9 @@ a:hover {
 .flex-column {
 	flex-direction: column;
 }
+.flex-wrap{
+	flex-wrap: wrap;
+}
 
 /* module 09 */
 
@@ -110,6 +113,7 @@ a:hover {
 	background-color: var(--color-neutral-dark);
 	color: var(--color-white);
 	line-height: var(--header-height);
+	margin-bottom:1em;
 }
 .navbar h1 {
 	font-size: 1em;
@@ -119,7 +123,9 @@ a:hover {
 .navbar a {
 	padding:  0 0.5em;
 }
-
+.flush>.navbar {
+	margin-bottom: 0;
+}
 .nav-material ul,
 .nav-crumbs ul,
 .nav-stretch ul,
@@ -191,10 +197,14 @@ a:hover {
 .card.flat {
 	padding: 0;
 }
-.card-selection~.card-selection{
+[class*='col-']>.card{
+	height: 100%;
+	margin: 0;
+}
+.card-section~.card-section{
 	border-top:  1px solid var(--color-neutral-light);
 }
-.card-selection{
+.card-section{
 	padding:  1em;
 }
 /* well */

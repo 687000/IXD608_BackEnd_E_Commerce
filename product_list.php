@@ -16,12 +16,15 @@ include_once "parts/templates.php";
 	<div class="container">
 		<div class="card transparent">
 			<h1 class="text_center">Shopping</h1>
+			
+					<div class="form-control">
+						<form action="hotdog light" id="product-search">
+							<input type="search" class="hotdog" placeholder="Search product">
+						</form>
+					</div>
+					<div class="card transparent">
 			<div class="form-control">
-				<form action="hotdog light" id="product-search">
-					<input type="search" placeholder="Search product">
-				</form>
-			</div>
-			<div class="form-control">
+				<div class="display-flex flex-wrap">
 					<div class="display-flex">
 						<div class="display-flex flex-stretch">
 							<div class="flex-none">
@@ -39,7 +42,7 @@ include_once "parts/templates.php";
 						</div>
 						<div class="flex-none">
 							<div class="form-select">
-								<select class="js-sort">
+								<select class="js-sort form-button dark">
 									<option value="1">Newest</option>
 									<option value="2">Oldest</option>
 									<option value="3">Least Expensive</option>
@@ -47,8 +50,11 @@ include_once "parts/templates.php";
 								</select>
 							</div>
 						</div>
+					</div>
 				</div>
 			</div>
+			</div>
+
 		</div>
 		<div class="productlist grid gap">
 			
@@ -56,4 +62,5 @@ include_once "parts/templates.php";
 	</div>
 	<? include "parts/footer.php"?>
 </body>
+
 </html>

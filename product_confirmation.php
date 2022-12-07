@@ -1,6 +1,7 @@
 <?
 	include_once "lib/php/functions.php";
 #	print_p($_SESSION,$_GET,$_POST); 
+	session_start();
 	resetCart();
 #	print_p($_SESSION,$_GET,$_POST); 
 ?>

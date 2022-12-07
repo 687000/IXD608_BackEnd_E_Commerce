@@ -62,6 +62,7 @@ function cartItemById($id){
 		return $o->id==$id;});
 }
 function makeCartBadge(){
+	session_start();
 	$cart=getCart();
 	if(count($cart)==0){
 		return "";

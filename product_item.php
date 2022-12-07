@@ -36,13 +36,13 @@
 			<div class="col-xs-12 col-md-5">
 				<form class="card transparent" method="post" action="cart_actions.php?action=add-to-cart">
 					<input type="hidden" name="product-id" value="<?= $product->id ?>">
-					<div class="card-selection">
+					<div class="card-section">
 						<h2 class="product-title">
 							<?= $product->title; ?>
 						</h2>
 						<div class="product-price">&dollar;<?= $product->price;?></div>
 					</div>
-					<div class="card-selection">
+					<div class="card-section">
 						<div class="form-control">
 							<label for="product-amount" class="form-label">Amount</label>
 							<div class="form-select">
@@ -59,7 +59,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="card-selection">
+					<div class="card-section">
 						<input type="submit" value="Add to Cart" class="form-button">
 					</div>
 				</form>

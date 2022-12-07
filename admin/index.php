@@ -128,7 +128,7 @@ try {
 			UPDATE `products`
 			SET
 				`title`=?,
-				`price`=>?,
+				`price`=?,
 				`quantity`=?,
 				`category`=?,
 				`description`=?,
@@ -147,7 +147,6 @@ try {
 			$_POST['product-images'],
 			$_GET['id']
 		]);
-		// echo "<script>alert(JSON.stringify(".json_encode($_POST['product-title'])."));</script>";
 		header("location:{$_SERVER['PHP_SELF']}?id={$_GET['id']}");
 		break;
 		case "create":

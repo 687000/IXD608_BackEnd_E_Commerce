@@ -10,9 +10,8 @@ return $r.<<<HTML
 		<div>&dollar;$o->price</div>
 		<div>$o->title</div>
 				<div class="form-control">
-					<button class="form-button " type="button">ADD TO CART</button>
+					<button class="form-button" type="button">View Product</button>
 				</div>	
-	
 	</figcaption>
 </figure>
 </a>
@@ -66,21 +65,17 @@ function cartTotals(){
 	$taxfixed=number_format($cartprice*0.085,2,'.','');
 	$taxedfixed=number_format($cartprice*1.085,2,'.','');
 return <<<HTML
-<div class="card-selection display-flex">
+<div class="card-section display-flex">
 	<div class="flex-stretch"><h4>Sub Total</h4></div>
 	<div class="flex-none"><p>&dollar;$pricefixed</p></div>
 </div>
-<div class="card-selection display-flex">
+<div class="card-section display-flex">
 	<div class="flex-stretch"><p>Taxes</p></div>
 	<div class="flex-none"><p>&dollar;$taxfixed</p></div>
 </div>
-<div class="card-selection display-flex">
+<div class="card-section display-flex">
 	<div class="flex-stretch"><p>Total</p></div>
 	<div class="flex-none"><p>&dollar;$taxedfixed</p></div>
-</div>
-<div class="card-selection">
-	<a href="product_list.php" class="form-button" style="margin-bottom: 1em;">Keep Shopping</a>
-	<a href="product_checkout.php" class="form-button dark">Checkout</a>
 </div>
 HTML;
 }
@@ -103,6 +98,12 @@ function recommendedSimilar($cat,$id=0,$limit=3){
 	$result=makeQuery(makeConn(),"SELECT * 
 		FROM `products` 
 		WHERE `id` <> '$id' AND `category`='$cat' 
+		ORDER BY rand() LIMIT $limit");
+	recommendedProducts($result);
+}
+function recommendedAnyThing($limit=3){
+	$result=makeQuery(makeConn(),"SELECT * 
+		FROM `products` 
 		ORDER BY rand() LIMIT $limit");
 	recommendedProducts($result);
 }
