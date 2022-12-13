@@ -43,5 +43,6 @@
 			<? recommendedAnything(3);?>	
 		<?}?>
 	</div>
+	<? include "parts/footer.php"?>
 </body>
 </html>

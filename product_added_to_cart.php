@@ -17,10 +17,10 @@
 </head>
 <body>
 	<? include "parts/navbar.php";?>
-	<div class="container">
+	<div class="container" style="height: 44vh">
 		<div class="card transparent">
-			<h2>You added <?= $product->title;?>to your cart.</h2>
-			<p>There are now <?= $cart_product->amount;?> of <?= $product->title; ?>in your cart.</p>
+			<h2>You added <?= $product->title;?> to your cart.</h2>
+			<p>There are now <?= $cart_product->amount;?> of <?= $product->title; ?> <?= $cart_product->color;?> in your cart.</p>
 			<div class="display-flex">
 				<div class="flex-none"><a href="product_list.php"><p>Continue Shopping</p></a></div>
 				<div class="flex-stretch"></div>
@@ -28,5 +28,7 @@
 			</div>
 		</div>
 	</div>
+
+	<? include "parts/footer.php"?>
 </body>
 </html>

@@ -46,6 +46,7 @@ function addToCart($id,$amount,$color){
 		return $o->id==$id;});
 	if($p){
 		$p->amount+=$amount;
+		$p->color=$color;
 	}else{
 		$_SESSION['cart'][]=(object)[
 			"id"=>$id,
@@ -80,6 +81,7 @@ function getCartItems(){
 	return array_map(function($o) use($cart){
 		$p=cartItemById($o->id);
 		$o->amount=$p->amount;
+		$o->color=$p->color;
 		$o->total=$p->amount*$o->price;
 		return $o;
 	},$data);

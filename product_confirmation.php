@@ -13,10 +13,13 @@
 </head>
 <body>
 	<? include "parts/navbar.php"?>
-	<div class="container">
+	<div class="container" style="height: 44vh">
 		<div class="card transparent text_center">
-		<h1>Thank you for your purchase.</h2>
-			<img src="https://via.placeholder.com/600" alt="" class="media-image" style="height:40vh">
+		<h1>Thank you for your purchase!</h2>
+			<video autoplay muted loop style="height:25vh;border-radius: 50%;">
+					<source src="img/videos/video_03.mp4" type="video/mp4">
+					Your browser does not support the video tag.
+			</video>
 		<div class="grid gap">
 			<div class="col-sm-0 col-md-3">
 			</div>
@@ -24,9 +27,9 @@
 				<div class="form-control">
 					<a class="form-button dark-border" type="button" href="product_list.php">Continue Shopping</a>
 				</div>
-				<div class="form-control">
+<!-- 				<div class="form-control">
 					<a class="form-button dark" type="button">View My Orders</a>
-				</div>
+				</div> -->
 			</div>	
 			<div class="col-sm-0 col-md-3">
 			</div>

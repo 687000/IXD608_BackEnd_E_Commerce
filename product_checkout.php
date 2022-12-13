@@ -22,8 +22,9 @@
 							$totalfixed=number_format($o->total,2,'.','');
 							return $r."
 							<div class='display-flex'>
-							<div class='flex-stretch'>$o->title</div>
-							<div class='flex-none'>&dollar;$totalfixed</div>
+							<div class='flex-stretch' style='font-size:0.9rem;color:var(--color-theme-dark);margin-bottom:0.5rem'>$o->title<i style='font-size:0.6rem'>($o->color)</i></div>
+							<div class='flex-none'></div>
+							<div class='flex-none'style='font-size:0.9rem;color:var(--color-theme-dark)'>&dollar;$totalfixed</div>
 							</div>";
 						});
 						?>
@@ -104,5 +105,6 @@
 			</div>
 		</div>
 	</div>
+	<? include "parts/footer.php"?>
 </body>
 </html>

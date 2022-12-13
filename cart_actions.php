@@ -11,6 +11,7 @@ switch ($_GET['action']) {
 	case 'update-cart-item':
 		$p=cartItemById($_POST['id']);
 		$p->amount=$_POST['amount'];
+		$p->color=$_POST['color'];
 		header("location:product_cart.php");
 		break;
 	case 'delete-cart-item':

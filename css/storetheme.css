@@ -477,6 +477,16 @@ footer .author_right p {
 .productlist .product.figure img {
 	height: 40vh;
 }
+.figure.product.recommend img {
+	height: 20vh;
+	width: 20vh;
+}
+.figure.product.recommend .bottom-align{
+	display: flex;
+  justify-content: flex-end;
+  flex-direction: column;
+}
+
 .productlist figcaption {
 	margin: 0.5em;
 }
@@ -519,4 +529,27 @@ footer a:hover {
 }
 .nav-logo a:hover{
 	text-decoration: none;
+}
+.rounded_border{
+	border-radius: 2%;
+}
+.circle_border{
+	border-radius: 50%;
+}
+.center_item {
+	display: block;
+	margin: 0 auto;
+}
+.button_link {
+	background: none!important;
+  border: none;
+  padding: 0!important;
+  color: var(--color-theme-light);
+  cursor: pointer;
+}
+
+.form-control.nav .button_link{
+	font-size: 20px;
+	margin-bottom: 2rem;
+	font-weight: 300;
 }

@@ -58,7 +58,19 @@
 								</select>
 							</div>
 						</div>
+						<div class="form-control">
+							<label for="product-color" class="form-label">Hamster Species</label>
+							<div class="form-select">
+								<select name="product-color" id="product-color">
+									<option>For General</option>
+									<option>For Golden Hamsters</option>
+									<option>For Dwarf Hasmters</option>
+									<option>For Roborovski Hamsters</option>
+								</select>
+							</div>
+						</div>						
 					</div>
+
 					<div class="card-section">
 						<input type="submit" value="Add to Cart" class="form-button">
 					</div>
@@ -71,5 +83,6 @@
 		<h2>Recommended Products</h2>
 		<? recommendedSimilar($product->category,$product->id)?>
 	</div>
+	<? include "parts/footer.php"?>
 </body>
 </html>
