@@ -12,6 +12,7 @@
 	<? include "parts/meta.php";?>
 </head>
 <body>
+	<div class="all_but_footer">
 	<? include "parts/navbar.php";?>
 	<div class="container">
 		<h2>In Your Cart</h2>
@@ -43,6 +44,7 @@
 			<? recommendedAnything(3);?>	
 		<?}?>
 	</div>
+</div>
 	<? include "parts/footer.php"?>
 </body>
 </html>

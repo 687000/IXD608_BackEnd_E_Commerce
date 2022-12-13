@@ -10,6 +10,7 @@
 	<? include "parts/meta.php"?>
 </head>
 <body class="flush">
+	<div class="all_but_footer">
 	<? include "parts/navbar.php"?>
 	<!--For module 12-->
 	<div class="view-window" style="background-image: url(img/dwarf-hamste-background.jpg);">
@@ -51,6 +52,7 @@
 		<h2>Random browsing</h2>
 		<? recommendedSimilar('living',8) ?>
 	</div>	
+	</div>
 	<? include "parts/footer.php"?>
 </body>
 </html>

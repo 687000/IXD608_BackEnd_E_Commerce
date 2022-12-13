@@ -20,6 +20,12 @@ body {
 	padding-right: 5vw;
 	padding-left: 5vw;
 }
+.all_but_footer {
+	box-sizing: border-box;
+	min-height: 45vh;
+	margin-bottom: 0!important;
+	padding-bottom: 2rem;
+}
 @media(max-width: 810px){
 	.container{
 		padding-left: 1em;
@@ -62,6 +68,9 @@ body {
 		display: block;
 		height: 100vh;
     width: 100%;
+	}
+	.media-image {
+		display: none;
 	}
 }
 .figure.product{
@@ -441,6 +450,7 @@ footer {
 	width: 100vw;
 	transform: translateX(-5vw);
 	margin-top: 3em;
+	height: 20vh;
 }
 footer .grid {
 	padding: 2em;
@@ -448,6 +458,23 @@ footer .grid {
 	width: 100%;
 	background-color: var(--color-theme-light);
 	color: var(--color-offwhite);
+}
+@media(max-width: 400px){
+	footer .grid {
+		display: none;
+	}
+	footer {
+		margin-top: 0;
+		height: auto;
+	}
+
+	footer .author_right {
+		height: 10vh;
+	}
+	.all_but_footer {
+	min-height: 90vh;
+	margin-bottom: 0!important;
+}
 }
 footer .grid h4{
 	color: var(--color-offwhite);
@@ -553,3 +580,5 @@ footer a:hover {
 	margin-bottom: 2rem;
 	font-weight: 300;
 }
+
+

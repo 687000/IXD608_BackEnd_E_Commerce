@@ -19,6 +19,7 @@
 	<script src="js/product_thumbs.js"></script>
 </head>
 <body>
+	<div class="all_but_footer">
 	<? include "parts/navbar.php"?>
 	<div class="container">
 		<div class="grid gap">
@@ -83,6 +84,7 @@
 		<h2>Recommended Products</h2>
 		<? recommendedSimilar($product->category,$product->id)?>
 	</div>
+</div>
 	<? include "parts/footer.php"?>
 </body>
 </html>

@@ -12,6 +12,7 @@
 	<? include "parts/meta.php"?>
 </head>
 <body>
+	<div class="all_but_footer">
 	<? include "parts/navbar.php"?>
 	<div class="container" style="height: 44vh">
 		<div class="card transparent text_center">
@@ -37,6 +38,7 @@
 
 		</div>
 	</div>
+</div>
 	<? include "parts/footer.php"?>	
 </body>
 </html>

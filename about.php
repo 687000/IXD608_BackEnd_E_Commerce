@@ -10,6 +10,7 @@
 	<? include "parts/meta.php"?>
 </head>
 <body>
+	<div class="all_but_footer">
 	<? include "parts/navbar.php"?>
 	<div class="container">
 		<div class="card transparent">
@@ -70,6 +71,7 @@
 		</div>
 		</div>
 	</div>
+</div>
 	<? include "parts/footer.php"?>
 </body>
 </html>

@@ -12,6 +12,7 @@ include_once "parts/templates.php";
 	<script src="js/product_list.js"></script>
 </head>
 <body>
+	<div class="all_but_footer">
 	<? include "parts/navbar.php";?>
 	<div class="container">
 		<div class="card transparent">
@@ -59,6 +60,7 @@ include_once "parts/templates.php";
 		</div>
 	</div>
 	</div>
+</div>
 	<? include "parts/footer.php"?>
 </body>
 
