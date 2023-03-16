@@ -33,10 +33,10 @@
 			<div class="col-sm-12 col-md-6">
 				<div >
 					<div class="grid gap">
-						<div class="col-sm-4">
+						<div class="col-sm-0 col-md-4">
 							<img src="img/images/img_01.png" alt="" class="media-image" style="width:20vh;">
 						</div>
-						<div class="col-sm-8">
+						<div class="col-sm-12 col-md-8">
 							<h3>For Different Species</h3>
 							<p>Different species of hamsters have varying body sizes and habits. It is crucial to choose the appropriate products for each individual species. Our range of products caters to the unique needs of every type of hamster.</p>
 						</div>						
@@ -45,10 +45,10 @@
 				</div>
 				<div >
 					<div class="grid gap">
-						<div class="col-sm-4">
+						<div class="col-sm-0 col-md-4">
 							<img src="img/images/img_02.png" alt="" class="media-image" style="width:20vh;">
 						</div>
-						<div class="col-sm-8">
+						<div class="col-sm-12 col-md-8">
 							<h3>Foods and Drinks</h3>
 							<p>We offer safe, natural foods such as grains, seeds, nuts, flowers, dried herbs, fruits, and proteins.</p>
 						</div>						
@@ -57,10 +57,10 @@
 				</div>
 				<div >
 					<div class="grid gap">
-						<div class="col-sm-4">
+						<div class="col-sm-0 col-md-4">
 							<img src="img/images/img_03.png" alt="" class="media-image" style="width:20vh;">
 						</div>
-						<div class="col-sm-8">
+						<div class="col-sm-12 col-md-8">
 							<h3>Environments</h3>
 							<p>Hamsters are natural burrowers and love to live underground. It is essential to provide them with an enriched environment and a secure shelter to mimic their natural habitat.</p>
 						</div>						

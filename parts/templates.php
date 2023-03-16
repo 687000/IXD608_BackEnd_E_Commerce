@@ -22,10 +22,10 @@ return $r.<<<HTML
 <a class="col-xs-12 col-md-6" href="product_item.php?id=$o->id" >
 <figure class="figure product display-flex flex-column recommend" style="border-bottom: 0.1px solid var(--color-theme-light);">
 <div class="grid gap">
-	<div class="col-sm-4">
+	<div class="col-md-4">
 		<img src="img/store/$o->thumbnail" alt="">
 	</div>
-	<div class="col-sm-8 bottom-align">
+	<div class="col-md-8 bottom-align">
 		<h3 style="margin-bottom: 0;">$o->title</h3>
 		<p style="margin-top: 0;">&dollar;$o->price</p>
 		<div class="form-control" style="margin-top: 0;">
